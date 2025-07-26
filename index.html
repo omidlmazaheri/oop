@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p id="demo"></p>
+
+<script>
+
+class Car {
+  constructor(name, year, color) {
+    this.carName = name;
+    this.carYear = year;
+    this.carColor= color;
+  }
+}
+var _carName="Ford";
+let myCar1 = new Car(_carName, 2014, "Red");
+let myCar2 = new Car("Audi", 2019, "Blue");
+
+myCar1.carColor="black";
+
+document.getElementById("demo").innerHTML =
+myCar1.carName + " in " + myCar1.carYear + " color: " + myCar1.carColor+ "<br>" +
+myCar2.carName + " in " + myCar2.carYear + " color: " + myCar2.carColor ;
+</script>
+
+</body>
