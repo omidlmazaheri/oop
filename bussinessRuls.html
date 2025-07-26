@@ -6,21 +6,24 @@
 <p id="demo"></p>
 
 <script>
-class Car {
-  constructor(name, year) {
-    this.name = name;
-    this.year = year;
+class DiscountCalculator {
+  constructor(originalPrice, name) {
+    this.originalPrice = originalPrice;
+    this.discountRate = 0.3; 
+    this.name=name;
+  }
 
+  getFinalPrice() {
+    return this.originalPrice * (1 - this.discountRate);
   }
-  age() {
-    const date = new Date();
-    return date.getFullYear() - this.year;
-  }
+
+  
 }
 
-const myCar = new Car("Ford", 2014);
-document.getElementById("demo").innerHTML =
-"My car: " + myCar.name + " " + myCar.age() + " is years old.";
+const calculator = new DiscountCalculator(100, 'product'); 
+calculator.discountRate=.5;
+
+document.getElementById("demo").innerHTML = calculator.name + ":" + "<del>" +calculator.originalPrice +"</del>" + "->"+calculator.getFinalPrice(); 
 </script>
 
 </body>
